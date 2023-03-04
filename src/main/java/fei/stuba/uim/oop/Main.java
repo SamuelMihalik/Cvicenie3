@@ -1,5 +1,7 @@
 package fei.stuba.uim.oop;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -44,43 +46,63 @@ public class Main {
         String inputParameter = scan.nextLine();
 
         if (inputOrder.equals("vzostupne")) {
-            if (inputParameter.equals("ID")) {
-                Quicksort.intQuickSortAsc(ids, 0, size - 1);
-                System.out.println("Vzostupne zotriedene pole podla ID : " + Arrays.toString(ids));
+            switch(inputParameter) {
+                case "ID":
+                    Quicksort.intQuickSortAsc(ids, 0, size - 1);
+                    System.out.println("Vzostupne zotriedene pole podla ID : " + Arrays.toString(ids));
+                    break;
 
-            } else if (inputParameter.equals("meno")) {
-                Quicksort.stringQuickSortAsc(names, 0, size - 1);
-                System.out.println("Vzostupne zotriedene pole podla mena : " + Arrays.toString(names));
+                case "meno":
+                    Quicksort.stringQuickSortAsc(names, 0, size - 1);
+                    System.out.println("Vzostupne zotriedene pole podla mena : " + Arrays.toString(names));
+                    break;
 
-            } else if (inputParameter.equals("priezvisko")) {
-                Quicksort.stringQuickSortAsc(surenames, 0, size - 1);
-                System.out.println("Vzostupne zotriedene pole podla priezviska : " + Arrays.toString(surenames));
+                case "priezvisko":
+                    Quicksort.stringQuickSortAsc(surenames, 0, size - 1);
+                    System.out.println("Vzostupne zotriedene pole podla priezviska : " + Arrays.toString(surenames));
+                    break;
 
-            } else if (inputParameter.equals("vek")) {
-                Quicksort.intQuickSortAsc(ages, 0, size - 1);
-                System.out.println("Vzostupne zotriedene pole podla veku : " + Arrays.toString(ages));
+                case "vek":
+                    Quicksort.intQuickSortAsc(ages, 0, size - 1);
+                    System.out.println("Vzostupne zotriedene pole podla veku : " + Arrays.toString(ages));
+                    break;
 
-            } else System.out.println("Zle zadany parameter!");
+                default:
+                    System.out.println("Zle zadany parameter!");
+                    break;
+            }
 
         } else if (inputOrder.equals("zostupne")) {
-            if (inputParameter.equals("ID")) {
-                Quicksort.intQuickSortAsc(ids, 0, size - 1);
-                System.out.println("Zostupne zotriedene pole podla ID : " + Arrays.toString(ids));
+            switch(inputParameter) {
+                case "ID":
+                    Quicksort.intQuickSortDesc(ids, 0, size - 1);
+                    System.out.println("Zostupne zotriedene pole podla ID : " + Arrays.toString(ids));
+                    break;
 
-            } else if (inputParameter.equals("meno")) {
-                Quicksort.stringQuickSortAsc(names, 0, size - 1);
-                System.out.println("Zostupne zotriedene pole podla mena : " + Arrays.toString(names));
+                case "meno":
+                    Quicksort.stringQuickSortDesc(names, 0, size - 1);
+                    System.out.println("Zostupne zotriedene pole podla mena : " + Arrays.toString(names));
+                    break;
 
-            } else if (inputParameter.equals("priezvisko")) {
-                Quicksort.stringQuickSortAsc(surenames, 0, size - 1);
-                System.out.println("Zostupne zotriedene pole podla priezviska : " + Arrays.toString(surenames));
+                case "priezvisko":
+                    Quicksort.stringQuickSortDesc(surenames, 0, size - 1);
+                    System.out.println("Zostupne zotriedene pole podla priezviska : " + Arrays.toString(surenames));
+                    break;
 
-            } else if (inputParameter.equals("vek")) {
-                Quicksort.intQuickSortAsc(ages, 0, size - 1);
-                System.out.println("Zostupne zotriedene pole podla veku : " + Arrays.toString(ids));
+                case "vek":
+                    Quicksort.intQuickSortDesc(ages, 0, size - 1);
+                    System.out.println("Zostupne zotriedene pole podla veku : " + Arrays.toString(ages));
+                    break;
 
-            } else System.out.println("Zle zadany smer!");
+                default:
+                    System.out.println("Zle zadany parameter!");
+                    break;
+            }
 
-        }
+        } else System.out.println("Zle zadany smer!");
+
     }
+
+    //Arrays.sort(arr);
+    //Arrays.sort(arr, Collections.reverseOrder()); pri integeroch Integer[]!!
 }
